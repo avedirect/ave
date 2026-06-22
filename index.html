@@ -3,993 +3,571 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#000000" />
-<title>тесла — лаборатория высокого напряжения · 2026</title>
-<meta name="description" content="Никола Тесла, 2026. Электричество как зрелище: аренда двухметровых катушек для театров, беспроводная энергия, молниевые шоу и плазменные объекты." />
-<meta property="og:title" content="ТЕСЛА — молния в аренду · 2026" />
-<meta property="og:description" content="Лаборатория высокого напряжения Николы Теслы. Сдаю гром, свет и беспроводную энергию — с 1891 года, теперь и в 2026." />
+<meta name="theme-color" content="#05070e" />
+<title>TESLA FUTURE LAB — наследие Николы Теслы · 2026</title>
+<meta name="description" content="Tesla Future Lab — кинематографичный лендинг о наследии Николы Теслы и технологиях будущего: идеи, изменившие мир, катушка Теслы, влияние на человечество, аналитика и город будущего." />
+<meta property="og:title" content="TESLA FUTURE LAB" />
+<meta property="og:description" content="Исследуем невозможное, чтобы создать будущее." />
 <meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Raleway:wght@400&display=swap" rel="stylesheet" />
-
-<style>
-/* ============================================================
-   TOKENS — monopo saigon system (achromatic, editorial)
-   ============================================================ */
-:root{
-  /* Colors */
-  --paper:#ffffff;
-  --ink:#000000;
-  --carbon:#181818;
-  --ash:#6d6d6d;
-  --smoke:#9a9a9a;
-  --pewter:#808080;
-  --graphite:#636363;
-  /* Mercury Flow — organic color, used ONLY inside hero/feature renders, never in UI */
-  --mercury-a:rgb(160,224,171);
-  --mercury-b:rgb(255,172,46);
-  --mercury-c:rgb(165,45,37);
-
-  /* Type */
-  --font-display:'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-quote:'Raleway', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-system:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
-  --w-light:300;
-  --w-regular:400;
-  --w-semi:600;
-
-  /* Fluid type scale (mobile → 1440px). Hero commits to monumental scale. */
-  --t-hero:clamp(58px, 16.5vw, 225px);
-  --t-display:clamp(46px, 9.2vw, 94px);
-  --t-heading-lg:clamp(40px, 7.4vw, 78px);
-  --t-heading:clamp(33px, 5vw, 54px);
-  --t-heading-sm:clamp(28px, 3.6vw, 45px);
-  --t-subheading:clamp(24px, 2.6vw, 30px);
-  --t-body-lg:18px;
-  --t-body:16px;
-  --t-micro:12px;
-  --t-nano:11px;
-  --t-legal:9px;
-
-  /* Spacing */
-  --s-8:8px; --s-12:12px; --s-16:16px; --s-24:24px; --s-28:28px;
-  --s-40:40px; --s-48:48px; --s-64:64px; --s-68:68px; --s-152:152px;
-  --section-y:clamp(80px, 11vw, 152px);
-  --gutter:clamp(20px, 5vw, 68px);
-  --maxw:1440px;
-
-  --radius-pill:75px;
-
-  --hairline:rgba(24,24,24,.16);
-  --hairline-dark:rgba(255,255,255,.18);
-
-  --ease:cubic-bezier(.2,.7,.2,1);
-}
-
-/* ============================================================ RESET ===== */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
-body{
-  font-family:var(--font-display);
-  font-weight:var(--w-regular);
-  font-size:var(--t-body-lg);
-  line-height:1.39;
-  color:var(--carbon);
-  background:var(--paper);
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-  overflow-x:hidden;
-}
-img,canvas,svg{display:block;max-width:100%;}
-a{color:inherit;text-decoration:none;}
-button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;}
-::selection{background:var(--ink);color:var(--paper);}
-
-/* Focus — visible for keyboard nav (the only non-flat affordance allowed) */
-:focus-visible{outline:1px solid currentColor;outline-offset:4px;}
-
-/* Skip link */
-.skip{position:fixed;left:-9999px;top:0;z-index:200;background:var(--ink);color:#fff;
-  padding:12px 20px;font-size:var(--t-micro);}
-.skip:focus{left:12px;top:12px;}
-
-/* ============================================================ LAYOUT ===== */
-.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);width:100%;}
-.section{padding-block:var(--section-y);}
-.frame{background:var(--ink);color:var(--paper);}
-.editorial{background:var(--paper);color:var(--carbon);}
-
-.eyebrow{
-  font-size:var(--t-nano);font-weight:var(--w-regular);
-  letter-spacing:.18em;text-transform:uppercase;color:var(--ash);
-  display:flex;align-items:center;gap:10px;
-}
-.frame .eyebrow{color:var(--smoke);}
-.eyebrow .idx{font-variant-numeric:tabular-nums;}
-.eyebrow .bar{flex:0 0 36px;height:1px;background:currentColor;opacity:.4;}
-
-/* ============================================================ NAV ======== */
-.nav{
-  position:fixed;inset:0 0 auto 0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:22px var(--gutter);
-  color:var(--paper);
-  transition:background .5s var(--ease), color .5s var(--ease), padding .5s var(--ease);
-}
-.nav.scrolled{background:var(--paper);color:var(--carbon);padding-block:16px;
-  border-bottom:1px solid var(--hairline);}
-.nav__logo{font-size:var(--t-micro);font-weight:var(--w-regular);letter-spacing:.02em;
-  display:inline-flex;align-items:baseline;gap:7px;}
-.nav__logo b{font-weight:var(--w-semi);}
-.nav__logo .dot{width:5px;height:5px;border-radius:50%;background:currentColor;
-  display:inline-block;transform:translateY(-1px);}
-.nav__right{display:flex;align-items:center;gap:28px;}
-.nav__lang{display:flex;align-items:center;gap:10px;font-size:var(--t-nano);}
-.nav__lang button{letter-spacing:.04em;opacity:.55;transition:opacity .25s var(--ease);}
-.nav__lang button:hover{opacity:1;}
-.nav__lang button[aria-current="true"]{opacity:1;font-weight:var(--w-semi);}
-.nav__menu{display:flex;align-items:center;gap:24px;}
-.nav__menu a{
-  font-size:var(--t-micro);text-transform:uppercase;letter-spacing:.08em;
-  position:relative;padding-block:4px;transition:opacity .25s var(--ease);opacity:.75;
-}
-.nav__menu a:hover,.nav__menu a.active{opacity:1;}
-.nav__menu a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
-  background:currentColor;transition:width .35s var(--ease);}
-.nav__menu a:hover::after,.nav__menu a.active::after{width:100%;}
-.nav__burger{display:none;width:30px;height:18px;position:relative;}
-.nav__burger span{position:absolute;left:0;height:1.5px;width:100%;background:currentColor;
-  transition:transform .4s var(--ease),opacity .3s var(--ease);}
-.nav__burger span:nth-child(1){top:0;}
-.nav__burger span:nth-child(2){top:50%;transform:translateY(-50%);}
-.nav__burger span:nth-child(3){bottom:0;}
-
-/* Mobile fullscreen menu */
-.mobile-menu{
-  position:fixed;inset:0;z-index:90;background:var(--ink);color:var(--paper);
-  display:flex;flex-direction:column;justify-content:center;padding:var(--gutter);
-  transform:translateY(-100%);transition:transform .6s var(--ease);
-  visibility:hidden;
-}
-.mobile-menu.open{transform:translateY(0);visibility:visible;}
-.mobile-menu a{font-size:clamp(34px,11vw,64px);font-weight:var(--w-light);
-  line-height:1.12;padding-block:6px;opacity:.85;}
-.mobile-menu a:hover{opacity:1;}
-.mobile-menu .mm-foot{margin-top:48px;font-size:var(--t-micro);color:var(--smoke);
-  display:flex;gap:18px;flex-wrap:wrap;letter-spacing:.04em;}
-
-/* ============================================================ PILL ====== */
-.pill{
-  display:inline-flex;align-items:center;gap:9px;
-  border-radius:var(--radius-pill);
-  padding:13px 26px;                 /* enlarged from monopo's 1/6 for tap-target a11y */
-  font-size:var(--t-micro);letter-spacing:.06em;text-transform:uppercase;
-  line-height:1;white-space:nowrap;
-  transition:background .3s var(--ease),color .3s var(--ease),opacity .3s var(--ease);
-}
-.pill svg{width:13px;height:13px;}
-.pill--solid{background:var(--paper);color:var(--ink);}
-.pill--solid:hover{background:var(--smoke);}
-.frame .pill--solid{background:var(--paper);color:var(--ink);}
-.pill--ghost{border:1px solid currentColor;}
-.pill--ghost:hover{background:currentColor;}
-.pill--ghost:hover span{color:var(--ink);}
-.frame .pill--ghost:hover span{color:var(--ink);}
-.editorial .pill--ghost:hover span{color:var(--paper);}
-.pill--util{background:var(--graphite);color:var(--paper);padding:8px 16px;letter-spacing:.04em;}
-.pill--util:hover{background:var(--carbon);}
-
-/* ============================================================ HERO ====== */
-.hero{
-  position:relative;min-height:100svh;background:var(--ink);color:var(--paper);
-  display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;overflow:hidden;padding:120px var(--gutter) 90px;
-}
-.hero__canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
-.hero__veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(120% 90% at 50% 40%,transparent 35%,rgba(0,0,0,.55) 100%);}
-.hero__inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:clamp(28px,4vw,48px);}
-.hero__kicker{font-size:var(--t-nano);letter-spacing:.22em;text-transform:uppercase;
-  color:var(--smoke);max-width:90vw;}
-.hero h1{
-  font-size:var(--t-hero);font-weight:var(--w-light);line-height:.76;
-  letter-spacing:-.01em;margin:0;
-}
-.hero h1 .lower{display:block;}
-.hero__sub{max-width:560px;font-size:var(--t-body-lg);line-height:1.5;color:rgba(255,255,255,.8);}
-.hero__cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-
-/* hero bottom atmospheric bar */
-.hero__bar{position:absolute;left:0;right:0;bottom:0;z-index:2;
-  display:flex;align-items:flex-end;justify-content:space-between;
-  padding:0 var(--gutter) 26px;font-size:var(--t-legal);font-family:var(--font-system);
-  letter-spacing:.12em;text-transform:uppercase;color:var(--smoke);pointer-events:none;}
-.scroll-ind{width:84px;height:84px;position:relative;pointer-events:auto;}
-.scroll-ind svg{width:100%;height:100%;animation:spin 18s linear infinite;}
-.scroll-ind .arrow{position:absolute;inset:0;margin:auto;width:11px;height:11px;}
-@keyframes spin{to{transform:rotate(360deg);}}
-.scroll-ind text{font-size:9.5px;letter-spacing:2px;fill:var(--paper);
-  font-family:var(--font-system);text-transform:uppercase;}
-
-/* ============================================================ STATS BAND = */
-.stats{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);}
-.stat{background:var(--paper);padding:40px clamp(16px,2vw,28px);}
-.stat__num{font-size:var(--t-heading-sm);font-weight:var(--w-light);line-height:1;
-  letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
-.stat__lbl{margin-top:14px;font-size:var(--t-nano);letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ash);}
-
-/* ============================================================ MANIFESTO == */
-.manifesto h2{font-size:var(--t-display);font-weight:var(--w-light);line-height:1.06;
-  letter-spacing:-.015em;max-width:14ch;margin:34px 0 0;}
-.manifesto .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);
-  margin-top:clamp(48px,7vw,90px);}
-.manifesto p{font-size:var(--t-body-lg);line-height:1.6;color:var(--carbon);max-width:46ch;}
-.manifesto p + p{margin-top:24px;}
-.manifesto .lead{font-size:var(--t-subheading);font-weight:var(--w-light);
-  line-height:1.32;color:var(--ink);letter-spacing:-.01em;}
-.manifesto .sign{margin-top:32px;font-size:var(--t-micro);letter-spacing:.1em;
-  text-transform:uppercase;color:var(--ash);}
-
-/* ============================================================ CATALOG ==== */
-.catalog__head{display:flex;justify-content:space-between;align-items:flex-end;
-  gap:24px;flex-wrap:wrap;}
-.catalog__head h2{font-size:var(--t-heading-lg);font-weight:var(--w-light);
-  line-height:1.05;letter-spacing:-.015em;max-width:16ch;margin-top:26px;}
-.catalog__head .note{font-size:var(--t-body);color:var(--ash);max-width:30ch;}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:clamp(40px,5vw,64px);}
-.card{
-  position:relative;background:var(--ink);color:var(--paper);
-  min-height:clamp(300px,32vw,440px);padding:30px;
-  display:flex;flex-direction:column;justify-content:space-between;
-  overflow:hidden;isolation:isolate;
-}
-.card::before{ /* atmospheric monochrome texture (imagery, not chrome) */
-  content:"";position:absolute;inset:0;z-index:-1;opacity:.9;
-  background:
-    radial-gradient(140% 120% at 80% 0%, rgba(255,255,255,.07), transparent 55%),
-    radial-gradient(120% 120% at 0% 100%, rgba(255,255,255,.05), transparent 50%),
-    repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 1px, transparent 1px 7px);
-  transition:opacity .6s var(--ease),transform 1.2s var(--ease);
-}
-.card:hover::before{opacity:1;transform:scale(1.06);}
-.card__top{display:flex;justify-content:space-between;align-items:flex-start;
-  font-size:var(--t-nano);letter-spacing:.14em;text-transform:uppercase;color:var(--smoke);}
-.card__mid{margin-top:auto;}
-.card__name{font-size:var(--t-subheading);font-weight:var(--w-light);line-height:1.1;
-  letter-spacing:-.01em;}
-.card__desc{margin-top:12px;font-size:var(--t-body);line-height:1.5;
-  color:rgba(255,255,255,.66);max-width:32ch;}
-.card__foot{margin-top:24px;padding-top:18px;border-top:1px solid var(--hairline-dark);
-  display:flex;justify-content:space-between;align-items:center;}
-.card__price{font-size:var(--t-micro);letter-spacing:.04em;color:var(--paper);}
-.card__price b{font-weight:var(--w-semi);}
-.card__arrow{width:30px;height:30px;border-radius:50%;border:1px solid var(--hairline-dark);
-  display:grid;place-items:center;transition:background .35s var(--ease),transform .35s var(--ease);}
-.card__arrow svg{width:12px;height:12px;transition:stroke .35s var(--ease);}
-.card:hover .card__arrow{background:var(--paper);transform:rotate(-45deg);}
-.card:hover .card__arrow svg{stroke:var(--ink);}
-
-/* secondary price list */
-.pricelist{margin-top:clamp(40px,5vw,64px);border-top:1px solid var(--hairline);}
-.pl-row{display:grid;grid-template-columns:48px 1.1fr 2fr auto;gap:24px;align-items:baseline;
-  padding:26px 0;border-bottom:1px solid var(--hairline);transition:padding-left .4s var(--ease);}
-.pl-row:hover{padding-left:14px;}
-.pl-row .pl-idx{font-size:var(--t-micro);color:var(--smoke);font-variant-numeric:tabular-nums;}
-.pl-row .pl-name{font-size:var(--t-subheading);font-weight:var(--w-light);letter-spacing:-.01em;}
-.pl-row .pl-desc{font-size:var(--t-body);color:var(--ash);line-height:1.45;}
-.pl-row .pl-price{font-size:var(--t-micro);letter-spacing:.04em;text-transform:uppercase;
-  color:var(--carbon);text-align:right;white-space:nowrap;}
-
-/* ============================================================ FLAGSHIP === */
-.flagship{position:relative;overflow:hidden;}
-.flagship .wrap{position:relative;z-index:2;}
-.flagship__bolt{position:absolute;inset:0;z-index:1;width:100%;height:100%;
-  opacity:.5;pointer-events:none;}
-.flagship__bolt path{fill:none;stroke:url(#mflow);stroke-width:1.4;
-  stroke-linejoin:round;stroke-linecap:round;
-  filter:drop-shadow(0 0 8px rgba(255,172,46,.35));}
-.flagship .layout{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,80px);
-  align-items:end;}
-.flagship h2{font-size:var(--t-hero);font-weight:var(--w-light);line-height:.78;
-  letter-spacing:-.02em;margin-top:24px;}
-.flagship .ftext{font-size:var(--t-subheading);font-weight:var(--w-light);
-  line-height:1.3;color:rgba(255,255,255,.9);letter-spacing:-.01em;}
-.flagship .fbody{margin-top:22px;font-size:var(--t-body-lg);line-height:1.6;
-  color:rgba(255,255,255,.66);max-width:42ch;}
-.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hairline-dark);
-  margin-top:clamp(40px,6vw,72px);border:1px solid var(--hairline-dark);}
-.spec{background:var(--ink);padding:28px;}
-.spec__n{font-size:var(--t-heading-sm);font-weight:var(--w-light);line-height:1;
-  letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
-.spec__l{margin-top:12px;font-size:var(--t-nano);letter-spacing:.12em;
-  text-transform:uppercase;color:var(--smoke);}
-
-/* ============================================================ PROCESS ==== */
-.process h2{font-size:var(--t-heading-lg);font-weight:var(--w-light);line-height:1.05;
-  letter-spacing:-.015em;margin-top:26px;max-width:18ch;}
-.steps{margin-top:clamp(40px,5vw,64px);border-top:1px solid var(--hairline);}
-.step{display:grid;grid-template-columns:120px 1fr 1.4fr;gap:24px;align-items:start;
-  padding:clamp(28px,3.5vw,44px) 0;border-bottom:1px solid var(--hairline);
-  transition:padding-left .4s var(--ease);}
-.step:hover{padding-left:14px;}
-.step__n{font-size:var(--t-heading-sm);font-weight:var(--w-light);line-height:1;
-  letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;}
-.step__t{font-size:var(--t-subheading);font-weight:var(--w-light);line-height:1.15;
-  letter-spacing:-.01em;}
-.step__d{font-size:var(--t-body-lg);line-height:1.55;color:var(--ash);max-width:42ch;}
-
-/* ============================================================ QUOTE ===== */
-.quote{text-align:center;}
-.quote blockquote{font-family:var(--font-quote);font-weight:400;
-  font-size:var(--t-heading);line-height:1.32;letter-spacing:-.005em;
-  max-width:20ch;margin:0 auto;color:var(--paper);}
-.quote cite{display:block;margin-top:40px;font-family:var(--font-display);
-  font-style:normal;font-size:var(--t-micro);letter-spacing:.16em;
-  text-transform:uppercase;color:var(--smoke);}
-
-/* ============================================================ CONTACT ==== */
-.contact h2{font-size:var(--t-display);font-weight:var(--w-light);line-height:1;
-  letter-spacing:-.02em;margin-top:30px;}
-.contact .csub{margin-top:26px;font-size:var(--t-body-lg);line-height:1.55;
-  color:rgba(255,255,255,.7);max-width:40ch;}
-.contact .cgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(36px,6vw,80px);
-  align-items:end;margin-top:clamp(40px,6vw,72px);}
-.contact .cmeta{display:grid;gap:26px;}
-.cmeta .row .k{font-size:var(--t-nano);letter-spacing:.16em;text-transform:uppercase;
-  color:var(--smoke);}
-.cmeta .row .v{margin-top:8px;font-size:var(--t-subheading);font-weight:var(--w-light);
-  letter-spacing:-.01em;}
-.cmeta .row a.v:hover{color:var(--smoke);transition:color .25s var(--ease);}
-.contact .cact{margin-top:8px;}
-
-/* ============================================================ FOOTER ==== */
-.footer{background:var(--carbon);color:var(--paper);padding-block:clamp(64px,8vw,96px) 36px;}
-.footer .ftop{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;}
-.footer__brand .logo{font-size:var(--t-heading-sm);font-weight:var(--w-light);
-  letter-spacing:-.01em;}
-.footer__brand p{margin-top:18px;font-size:var(--t-body);line-height:1.5;
-  color:var(--smoke);max-width:34ch;}
-.fcol h4{font-size:var(--t-nano);letter-spacing:.16em;text-transform:uppercase;
-  color:var(--pewter);margin-bottom:18px;font-weight:var(--w-regular);}
-.fcol a,.fcol span{display:block;font-size:var(--t-body);color:rgba(255,255,255,.78);
-  padding-block:6px;transition:color .25s var(--ease);}
-.fcol a:hover{color:var(--paper);}
-.footer .fbot{margin-top:clamp(56px,7vw,88px);padding-top:26px;
-  border-top:1px solid var(--hairline-dark);
-  display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
-  font-size:var(--t-nano);letter-spacing:.06em;color:var(--smoke);}
-.footer .fbot a:hover{color:var(--paper);}
-
-/* ============================================================ COOKIE ==== */
-.cookie{position:fixed;right:20px;bottom:20px;z-index:120;max-width:340px;
-  background:var(--paper);color:var(--carbon);padding:22px;
-  font-family:var(--font-system);
-  display:flex;flex-direction:column;gap:16px;
-  border:1px solid var(--hairline);
-  transform:translateY(140%);opacity:0;transition:transform .6s var(--ease),opacity .6s var(--ease);}
-.cookie.show{transform:translateY(0);opacity:1;}
-.cookie p{font-size:var(--t-micro);line-height:1.5;}
-.cookie a{text-decoration:underline;text-underline-offset:2px;}
-.cookie .crow{display:flex;align-items:center;gap:14px;}
-.cookie .cx{font-size:var(--t-micro);color:var(--ash);letter-spacing:.04em;}
-.cookie .cx:hover{color:var(--ink);}
-
-/* ============================================================ REVEAL ==== */
-.reveal{opacity:0;transform:translateY(26px);
-  transition:opacity .9s var(--ease),transform .9s var(--ease);}
-.reveal.in{opacity:1;transform:none;}
-.reveal[data-d="1"]{transition-delay:.08s;}
-.reveal[data-d="2"]{transition-delay:.16s;}
-.reveal[data-d="3"]{transition-delay:.24s;}
-.reveal[data-d="4"]{transition-delay:.32s;}
-
-/* toast for decorative lang toggle */
-.toast{position:fixed;left:50%;bottom:34px;
-  transform:translate(-50%,140%);background:var(--ink);color:var(--paper);
-  padding:12px 22px;font-size:var(--t-micro);letter-spacing:.04em;z-index:140;
-  opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease);pointer-events:none;}
-.toast.show{transform:translate(-50%,0);opacity:1;}
-
-/* ============================================================ RESPONSIVE = */
-@media (max-width:1024px){
-  .footer .ftop{grid-template-columns:1fr 1fr;gap:40px;}
-  .footer__brand{grid-column:1 / -1;}
-}
-@media (max-width:860px){
-  .nav__menu,.nav__lang{display:none;}
-  .nav__burger{display:block;}
-  .stats .wrap{grid-template-columns:repeat(2,1fr);}
-  .manifesto .cols{grid-template-columns:1fr;}
-  .grid{grid-template-columns:1fr 1fr;}
-  .flagship .layout{grid-template-columns:1fr;align-items:start;gap:36px;}
-  .contact .cgrid{grid-template-columns:1fr;align-items:start;}
-  .pl-row{grid-template-columns:32px 1fr;row-gap:8px;}
-  .pl-row .pl-desc{grid-column:2;}
-  .pl-row .pl-price{grid-column:2;text-align:left;}
-  .step{grid-template-columns:72px 1fr;}
-  .step__d{grid-column:2;}
-}
-@media (max-width:560px){
-  .grid{grid-template-columns:1fr;}
-  .specs{grid-template-columns:1fr;}
-  .footer .ftop{grid-template-columns:1fr;}
-  .hero__bar .meta-r{display:none;}
-}
-
-@media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1!important;transform:none!important;transition:none!important;}
-  .scroll-ind svg{animation:none;}
-  *{scroll-behavior:auto;}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/vendor/aos.css" />
+<link rel="stylesheet" href="assets/css/vendor/splitting.css" />
+<link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body>
-<a class="skip" href="#main">Перейти к содержанию</a>
 
-<!-- ============================ NAV ============================ -->
+<div class="bg-fx"></div>
+<div class="bg-grid"></div>
+<div class="bg-noise"></div>
+<div id="tsparticles" class="tsp"></div>
+<div class="progress" id="progress"></div>
+<div class="cursor" id="cursor"></div>
+
+<!-- ===================== NAV ===================== -->
 <header class="nav" id="nav">
-  <a class="nav__logo" href="#top" aria-label="тесла — на главную">
-    <span class="dot" aria-hidden="true"></span><b>тесла</b>&nbsp;лаборатория
-  </a>
+  <a class="brand" href="#top" aria-label="Tesla Future Lab"><b>TESLA</b><span>FUTURE LAB</span></a>
+  <nav class="nav__menu" aria-label="Основное меню">
+    <a href="#ideas">Идеи</a>
+    <a href="#coil">Разработки</a>
+    <a href="#analytics">Технологии</a>
+    <a href="#influence">Влияние</a>
+    <a href="#lab">Лаборатория</a>
+    <a href="#top">О Тесле</a>
+  </nav>
   <div class="nav__right">
-    <nav class="nav__lang" aria-label="Язык">
-      <button aria-current="true">РУ</button>
-      <button>EN</button>
-      <button>СР</button>
-    </nav>
-    <nav class="nav__menu" aria-label="Основное меню">
-      <a href="#manifesto">Манифест</a>
-      <a href="#catalog">Каталог</a>
-      <a href="#flagship">Шоу</a>
-      <a href="#process">Лаборатория</a>
-      <a href="#contact">Контакт</a>
-    </nav>
-    <button class="nav__burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn--primary btn--sm" href="#lab">Исследовать будущее
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <button class="lang" id="lang">RU
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- mobile menu -->
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <a href="#manifesto" data-mm>Манифест</a>
-  <a href="#catalog" data-mm>Каталог</a>
-  <a href="#flagship" data-mm>Шоу</a>
-  <a href="#process" data-mm>Лаборатория</a>
-  <a href="#contact" data-mm>Контакт</a>
-  <div class="mm-foot">
-    <span>РУ · EN · СР</span><span>lab@tesla.energy</span><span>©&nbsp;2026</span>
-  </div>
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <a href="#ideas" data-mm>Идеи</a>
+  <a href="#coil" data-mm>Разработки</a>
+  <a href="#analytics" data-mm>Технологии</a>
+  <a href="#influence" data-mm>Влияние</a>
+  <a href="#lab" data-mm>Лаборатория</a>
+  <a href="#top" data-mm>О Тесле</a>
 </div>
 
-<main id="main">
-<span id="top"></span>
+<main id="top">
 
-<!-- ============================ HERO ============================ -->
-<section class="hero" aria-label="Главный экран">
-  <canvas class="hero__canvas" id="bolts" aria-hidden="true"></canvas>
-  <div class="hero__veil" aria-hidden="true"></div>
-
-  <div class="hero__inner">
-    <p class="hero__kicker">Лаборатория высокого напряжения · осн. 1891 · редакция 2026</p>
-    <h1>Молния<span class="lower">в&nbsp;аренду</span></h1>
-    <p class="hero__sub">Электричество как зрелище. Сдаю гром, свет и беспроводную энергию — с 1891 года, теперь и в 2026-м.</p>
-    <div class="hero__cta">
-      <a class="pill pill--solid" href="#catalog"><span>Смотреть каталог</span></a>
-      <a class="pill pill--ghost" href="#contact"><span>Заказать грозу</span></a>
-    </div>
-  </div>
-
-  <div class="hero__bar">
-    <a class="scroll-ind" href="#manifesto" aria-label="Прокрутите вниз, чтобы исследовать">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <defs><path id="circlePath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
-        <text><textPath href="#circlePath" startOffset="0">ПРОКРУТИТЕ · ИССЛЕДУЙТЕ · </textPath></text>
+<!-- ===================== HERO ===================== -->
+<section class="hero section container" aria-label="Наследие Теслы">
+  <div class="hero__grid">
+    <div class="hero__col">
+      <span class="eyebrow">Наследие Теслы</span>
+      <h1 class="hero__title h-xl metal" data-splitting>
+        <span class="ln">Человек,</span><span class="ln">который изменил</span><span class="ln">будущее</span>
+      </h1>
+      <p class="hero__lead">Никола Тесла — изобретатель, инженер и визионер, чьи идеи опередили время.
+        Его открытия в области переменного тока, беспроводной передачи энергии и радиосвязи
+        стали фундаментом современной цивилизации.</p>
+      <svg class="hero__sign" viewBox="0 0 220 34" aria-hidden="true">
+        <path d="M4 26 C18 6 24 6 26 20 C28 30 34 30 40 14 C44 4 50 8 48 22 M58 24 C70 8 74 10 72 22 C71 30 80 26 84 16
+          M96 26 L100 10 M96 18 L108 16 M118 8 C108 12 110 28 120 24 C128 21 124 8 116 12
+          M134 24 L140 8 M150 22 C144 10 156 8 154 20 M166 6 L162 28 M176 24 C170 12 182 10 180 22 M192 8 L196 26"
+          fill="none" stroke="#9fb4e6" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" aria-hidden="true">
-        <path d="M12 4v16M6 14l6 6 6-6"/>
+    </div>
+
+    <div class="hero__visual" data-parallax-wrap>
+      <div class="portrait">
+        <img class="portrait__img" data-parallax="20"
+          src="https://upload.wikimedia.org/wikipedia/commons/d/d4/N.Tesla.JPG"
+          alt="Портрет Николы Теслы"
+          onerror="this.style.display='none';this.closest('.portrait').querySelector('.portrait__fallback').style.display='grid';" />
+        <div class="portrait__fallback metal" style="font-family:var(--f-display);font-weight:800;font-size:120px;letter-spacing:.05em;">NT</div>
+      </div>
+      <svg class="coil-hero" data-parallax="-30" viewBox="0 0 200 320" aria-hidden="true">
+        <ellipse cx="100" cy="42" rx="78" ry="24" fill="url(#tg)"/>
+        <ellipse cx="100" cy="36" rx="78" ry="20" fill="#0b1326" opacity=".5"/>
+        <rect x="78" y="56" width="44" height="150" rx="6" fill="url(#cg)"/>
+        <g stroke="#d89a55" stroke-width="2" opacity=".8">
+          <line x1="78" y1="64" x2="122" y2="64"/><line x1="78" y1="74" x2="122" y2="74"/>
+          <line x1="78" y1="84" x2="122" y2="84"/><line x1="78" y1="94" x2="122" y2="94"/>
+          <line x1="78" y1="104" x2="122" y2="104"/><line x1="78" y1="114" x2="122" y2="114"/>
+          <line x1="78" y1="124" x2="122" y2="124"/><line x1="78" y1="134" x2="122" y2="134"/>
+          <line x1="78" y1="144" x2="122" y2="144"/><line x1="78" y1="154" x2="122" y2="154"/>
+          <line x1="78" y1="164" x2="122" y2="164"/><line x1="78" y1="174" x2="122" y2="174"/>
+          <line x1="78" y1="184" x2="122" y2="184"/><line x1="78" y1="194" x2="122" y2="194"/>
+        </g>
+        <ellipse cx="100" cy="214" rx="86" ry="18" fill="url(#pg)"/>
+        <rect x="44" y="226" width="112" height="22" rx="5" fill="url(#bg2)"/>
+        <defs>
+          <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaf2ff"/><stop offset="1" stop-color="#2a3145"/></linearGradient>
+          <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9763a"/><stop offset="1" stop-color="#3a2412"/></linearGradient>
+          <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c98a4a"/><stop offset="1" stop-color="#3a2412"/></linearGradient>
+          <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7b879f"/><stop offset="1" stop-color="#11151d"/></linearGradient>
+        </defs>
       </svg>
-    </a>
-    <span class="meta-r">Белград 44.8°N · Колорадо-Спрингс · Низкая орбита</span>
-  </div>
-</section>
-
-<!-- ============================ STATS ============================ -->
-<section class="stats editorial" aria-label="Показатели">
-  <div class="wrap">
-    <div class="stat reveal"><div class="stat__num">135</div><div class="stat__lbl">лет&nbsp;опыта</div></div>
-    <div class="stat reveal" data-d="1"><div class="stat__num">1&nbsp;000&nbsp;000&nbsp;В</div><div class="stat__lbl">рабочее&nbsp;напряжение</div></div>
-    <div class="stat reveal" data-d="2"><div class="stat__num">0</div><div class="stat__lbl">проводов</div></div>
-    <div class="stat reveal" data-d="3"><div class="stat__num">∞</div><div class="stat__lbl">амбиций</div></div>
-  </div>
-</section>
-
-<!-- ============================ MANIFESTO ============================ -->
-<section class="section editorial manifesto" id="manifesto">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">(01)</span><span class="bar"></span>Манифест</p>
-    <h2 class="reveal" data-d="1">Я не изобретаю будущее. Я&nbsp;сдаю его в аренду.</h2>
-    <div class="cols">
-      <div class="reveal" data-d="1">
-        <p class="lead">Сто тридцать пять лет назад я зажёг лампу без проводов и пообещал миру свободную энергию. Мир тогда не был готов.</p>
-        <p>В 2026 году он наконец созрел — и я вернулся не музейным экспонатом за стеклом, а действующей лабораторией. Та же медь, те же резонансы, только теперь к ним прилагается счёт-фактура и аккуратный монтаж за один вечер.</p>
+      <div class="hero__quote" data-aos="fade-left">
+        <div class="qm">&ldquo;</div>
+        <p>Будущее принадлежит тем, кто слышит красоту своей мечты.</p>
+        <cite>— Никола Тесла</cite>
       </div>
-      <div class="reveal" data-d="2">
-        <p>Я не торгую мечтами. Я сдаю в аренду осязаемое: гром, который слышно за квартал, свет, которому не нужна розетка, и ту звенящую тишину между разрядами, от которой по коже бегут искры.</p>
-        <p>Всё, что я создаю, можно увидеть, услышать и почувствовать кожей. Электричество — это не товар. Это спектакль.</p>
-        <p class="sign">— Никола Тесла, Нью-Йорк → 2026</p>
+    </div>
+  </div>
+
+  <!-- stat strip -->
+  <div class="statstrip" data-aos="fade-up">
+    <div class="statstrip__item">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 21V5a2 2 0 0 1 2-2h8l5 5v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/></svg></span>
+      <div>
+        <div class="statstrip__big grad"><span class="count" data-count="300">0</span>+</div>
+        <div class="statstrip__t">Патентов</div>
+        <div class="statstrip__d">в США и других странах</div>
+      </div>
+    </div>
+    <div class="statstrip__item">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/></svg></span>
+      <div>
+        <div class="statstrip__t" style="margin-top:6px">Эпоха переменного тока</div>
+        <div class="statstrip__d">Система, которая изменила промышленность и образ жизни человечества</div>
+      </div>
+    </div>
+    <div class="statstrip__item">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
+      <div>
+        <div class="statstrip__t" style="margin-top:6px">Наследие мировой цивилизации</div>
+        <div class="statstrip__d">Идеи Теслы — основа современной энергетики, связи и технологий</div>
+      </div>
+    </div>
+    <div class="statstrip__item">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+      <div>
+        <div class="statstrip__big grad"><span class="count" data-count="100">0</span>+</div>
+        <div class="statstrip__t">лет вперёд</div>
+        <div class="statstrip__d">Многие идеи Теслы до сих пор вдохновляют учёных и инженеров</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================ CATALOG ============================ -->
-<section class="section editorial catalog" id="catalog">
-  <div class="wrap">
-    <div class="catalog__head">
-      <div class="reveal">
-        <p class="eyebrow"><span class="idx">(02)</span><span class="bar"></span>Аренда и продукты</p>
-        <h2>Что я предлагаю в 2026 году</h2>
-      </div>
-      <p class="note reveal" data-d="1">Шесть способов наполнить помещение управляемым электричеством. Привожу, заземляю и дирижирую лично.</p>
-    </div>
+<!-- ===================== TIMELINE ===================== -->
+<section class="section container" aria-label="Путь Николы Теслы" id="path">
+  <h2 class="tl__head">Путь Николы Теслы</h2>
+  <div class="tl__track" id="tlTrack">
+    <div class="tl__line"><i id="tlFill"></i></div>
+    <div class="tl__node"><div class="tl__year">1856</div><div class="tl__txt">Рождение в Смилянах, Австро-Венгрия</div></div>
+    <div class="tl__node"><div class="tl__year">1875</div><div class="tl__txt">Поступление в Политехнический институт в Граце</div></div>
+    <div class="tl__node"><div class="tl__year">1884</div><div class="tl__txt">Переезд в США. Начало работы с Томасом Эдисоном</div></div>
+    <div class="tl__node"><div class="tl__year">1888</div><div class="tl__txt">Основание компании Tesla Electric Company</div></div>
+    <div class="tl__node"><div class="tl__year">1891</div><div class="tl__txt">Получение патента на катушку Теслы</div></div>
+    <div class="tl__node"><div class="tl__year">1893</div><div class="tl__txt">Демонстрация беспроводной передачи энергии в Чикаго</div></div>
+    <div class="tl__node"><div class="tl__year">1895</div><div class="tl__txt">Построена лаборатория в Колорадо-Спрингс</div></div>
+    <div class="tl__node"><div class="tl__year">1901</div><div class="tl__txt">Передача первого радиосигнала через Атлантику</div></div>
+    <div class="tl__node"><div class="tl__year">1943</div><div class="tl__txt">Уход из жизни в Нью-Йорке</div></div>
+  </div>
+</section>
 
-    <div class="grid">
-      <!-- 1 -->
-      <article class="card reveal" tabindex="0">
-        <div class="card__top"><span>№ 01 · катушка</span><span>аренда</span></div>
-        <div class="card__mid">
-          <h3 class="card__name">«Гроза-2»</h3>
-          <p class="card__desc">Катушка Теслы высотой два метра. Разряды до 3 м, синхронные со звуком. Для театров, сцен и больших премьер.</p>
-        </div>
-        <div class="card__foot">
-          <span class="card__price">от <b>180&nbsp;000&nbsp;₽</b> / вечер</span>
-          <span class="card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </article>
-      <!-- 2 -->
-      <article class="card reveal" data-d="1" tabindex="0">
-        <div class="card__top"><span>№ 02 · энергия</span><span>проект</span></div>
-        <div class="card__mid">
-          <h3 class="card__name">Уорденклиф-мини</h3>
-          <p class="card__desc">Беспроводная передача энергии. Заряжаю зал, сцену и гостей без единого провода под ногами.</p>
-        </div>
-        <div class="card__foot">
-          <span class="card__price"><b>по запросу</b></span>
-          <span class="card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </article>
-      <!-- 3 -->
-      <article class="card reveal" data-d="2" tabindex="0">
-        <div class="card__top"><span>№ 03 · шоу</span><span>аренда</span></div>
-        <div class="card__mid">
-          <h3 class="card__name">«Тихий гром»</h3>
-          <p class="card__desc">Молниевое шоу под музыку. Разряды звучат как ударные, свет работает солистом. Синхрон с партитурой или битом.</p>
-        </div>
-        <div class="card__foot">
-          <span class="card__price">от <b>320&nbsp;000&nbsp;₽</b> / шоу</span>
-          <span class="card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </article>
-      <!-- 4 -->
-      <article class="card reveal" tabindex="0">
-        <div class="card__top"><span>№ 04 · климат</span><span>подписка</span></div>
-        <div class="card__mid">
-          <h3 class="card__name">Ион-климат</h3>
-          <p class="card__desc">«Воздух Теслы». Ионизация и свежесть помещения после грозы — без самой грозы. Тихо, чисто, ежемесячно.</p>
-        </div>
-        <div class="card__foot">
-          <span class="card__price">от <b>24&nbsp;900&nbsp;₽</b> / мес</span>
-          <span class="card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </article>
-      <!-- 5 -->
-      <article class="card reveal" data-d="1" tabindex="0">
-        <div class="card__top"><span>№ 05 · объект</span><span>продажа</span></div>
-        <div class="card__mid">
-          <h3 class="card__name">Плазма-сфера «Эго»</h3>
-          <p class="card__desc">Настольный резонатор-ночник ручной сборки. Реагирует на касание и голос. Нумерованная серия.</p>
-        </div>
-        <div class="card__foot">
-          <span class="card__price"><b>49&nbsp;000&nbsp;₽</b></span>
-          <span class="card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </article>
-      <!-- 6 -->
-      <article class="card reveal" data-d="2" tabindex="0">
-        <div class="card__top"><span>№ 06 · церемония</span><span>аренда</span></div>
-        <div class="card__mid">
-          <h3 class="card__name">Электро-венец</h3>
-          <p class="card__desc">Молниевая арка для свадеб и премьер. Двое входят — между ними проскакивает настоящая дуга. Безопасно, эффектно, навсегда в кадре.</p>
-        </div>
-        <div class="card__foot">
-          <span class="card__price">от <b>90&nbsp;000&nbsp;₽</b> / церемония</span>
-          <span class="card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </article>
+<!-- ===================== IDEAS ===================== -->
+<section class="section container ideas" id="ideas" aria-label="Идеи, которые изменили мир">
+  <div class="bigword metal" data-parallax-x="40">IDEAS</div>
+  <div class="ideas__head">
+    <div></div>
+    <div class="right">
+      <span class="eyebrow">Идеи</span>
+      <h2 class="h-lg" data-aos="fade-up">Идеи,<br>которые изменили мир</h2>
+      <p class="ideas__lead" data-aos="fade-up">Откройте изобретения Николы Теслы, опередившие своё время на десятилетия,
+        и посмотрите, как они сформировали современный мир.</p>
     </div>
+  </div>
 
-    <!-- secondary price list -->
-    <div class="pricelist reveal">
-      <div class="pl-row">
-        <span class="pl-idx">07</span>
-        <span class="pl-name">«Поле»</span>
-        <span class="pl-desc">Беспроводная зарядная зона для дронов и электромобилей. Паркуешься — заряжаешься.</span>
-        <span class="pl-price">по запросу</span>
+  <div class="ideas__grid">
+    <article class="idea glass" data-aos="fade-up">
+      <div class="idea__name">Переменный ток</div><div class="idea__year">1887</div>
+      <p class="idea__desc">Изобретение системы переменного тока сделало возможной передачу электроэнергии на большие расстояния.</p>
+      <div class="idea__viz"><svg viewBox="0 0 200 70" preserveAspectRatio="none"><path d="M0 35 C20 5 30 5 40 35 S60 65 80 35 S100 5 120 35 S140 65 160 35 S180 5 200 35" fill="none" stroke="#4f8dff" stroke-width="2"/></svg></div>
+      <div class="idea__tag">Основа современной энергетики</div>
+    </article>
+    <article class="idea glass" data-aos="fade-up" data-aos-delay="60">
+      <div class="idea__name">Катушка Теслы</div><div class="idea__year">1891</div>
+      <p class="idea__desc">Устройство, ставшее символом научного прогресса и основой для исследований в области высоких напряжений.</p>
+      <div class="idea__viz"><svg viewBox="0 0 200 70"><g stroke="#9a7cff" stroke-width="1.6" opacity=".85" fill="none"><path d="M100 8 L92 26 L108 30 L96 48 L106 52 L98 64"/><path d="M100 8 L110 24 L94 30 L106 44 L96 50 L102 64"/></g><ellipse cx="100" cy="62" rx="40" ry="6" fill="#4f8dff" opacity=".3"/></svg></div>
+      <div class="idea__tag">Прорыв в высоких напряжениях</div>
+    </article>
+    <article class="idea glass" data-aos="fade-up" data-aos-delay="120">
+      <div class="idea__name">Радио</div><div class="idea__year">1893</div>
+      <p class="idea__desc">Один из первых, кто продемонстрировал возможность беспроводной передачи сигналов на большие расстояния.</p>
+      <div class="idea__viz"><svg viewBox="0 0 200 70" fill="none" stroke="#4fd2ff" stroke-width="1.6"><circle cx="100" cy="50" r="4" fill="#4fd2ff"/><path d="M86 40a20 20 0 0 1 28 0M76 30a34 34 0 0 1 48 0M66 20a48 48 0 0 1 68 0"/></svg></div>
+      <div class="idea__tag">Рождение новой эры связи</div>
+    </article>
+    <article class="idea glass" data-aos="fade-up" data-aos-delay="180">
+      <div class="idea__name">Радиоуправление</div><div class="idea__year">1898</div>
+      <p class="idea__desc">Тесла представил миру идею управления механизмами на расстоянии с помощью радиосигналов.</p>
+      <div class="idea__viz"><svg viewBox="0 0 200 70" fill="none" stroke="#4f8dff" stroke-width="1.6"><rect x="80" y="40" width="40" height="20" rx="3"/><path d="M100 40V24M100 24l-8-6M100 24l8-6"/><circle cx="100" cy="16" r="3" fill="#4f8dff"/><path d="M60 50h12M128 50h12" opacity=".5"/></svg></div>
+      <div class="idea__tag">Начало эры автоматизации</div>
+    </article>
+    <article class="idea glass" data-aos="fade-up" data-aos-delay="240">
+      <div class="idea__name">Беспроводная связь</div><div class="idea__year">1899</div>
+      <p class="idea__desc">Видение глобальной беспроводной передачи информации и энергии без проводов и границ.</p>
+      <div class="idea__viz"><svg viewBox="0 0 200 70" fill="none" stroke="#9a7cff" stroke-width="1.4"><circle cx="100" cy="35" r="24"/><ellipse cx="100" cy="35" rx="24" ry="9"/><ellipse cx="100" cy="35" rx="9" ry="24"/><circle cx="100" cy="35" r="2.5" fill="#9a7cff"/></svg></div>
+      <div class="idea__tag">Мир без проводов и ограничений</div>
+    </article>
+    <article class="idea glass" data-aos="fade-up" data-aos-delay="300">
+      <div class="idea__name">Роботы</div><div class="idea__year">1920+</div>
+      <p class="idea__desc">Тесла предвидел будущее, в котором машины помогают человечеству, выполняя монотонную и опасную работу.</p>
+      <div class="idea__viz"><svg viewBox="0 0 200 70" fill="none" stroke="#4fd2ff" stroke-width="1.6"><rect x="86" y="22" width="28" height="24" rx="6"/><circle cx="94" cy="32" r="2.4" fill="#4fd2ff"/><circle cx="106" cy="32" r="2.4" fill="#4fd2ff"/><path d="M100 22v-6M100 46v10M86 50h28"/></svg></div>
+      <div class="idea__tag">Интеллект на службе человека</div>
+    </article>
+  </div>
+
+  <div class="process">
+    <div>
+      <h2 class="h-md" data-aos="fade-up">Как рождаются революционные идеи</h2>
+      <p class="ideas__lead" data-aos="fade-up">Путь от смелой мысли до технологии, меняющей мир.</p>
+      <a class="btn btn--ghost" href="#coil" style="margin-top:22px" data-aos="fade-up">Посмотреть все разработки
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="process__steps">
+      <div class="pstep" data-aos="zoom-in">
+        <div class="pstep__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 4 12c-1 1-1 2-1 3H9c0-1 0-2-1-3A7 7 0 0 1 12 2z"/></svg></div>
+        <div class="pstep__t">Открытие</div>
+        <div class="pstep__d">Идея возникает из наблюдений и стремления понять законы природы.</div>
       </div>
-      <div class="pl-row">
-        <span class="pl-idx">08</span>
-        <span class="pl-name">«Щит»</span>
-        <span class="pl-desc">Громоотвод как услуга. Беру удар стихии на себя — по абонентской плате.</span>
-        <span class="pl-price">от 12&nbsp;000&nbsp;₽ / мес</span>
+      <span class="parrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <div class="pstep" data-aos="zoom-in" data-aos-delay="80">
+        <div class="pstep__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></div>
+        <div class="pstep__t">Тестирование</div>
+        <div class="pstep__d">Гипотеза проверяется экспериментами и прототипами.</div>
       </div>
-      <div class="pl-row">
-        <span class="pl-idx">09</span>
-        <span class="pl-name">«Укрощение молнии»</span>
-        <span class="pl-desc">Мастер-класс в лаборатории. Один день, своя катушка, сертификат и слегка наэлектризованные волосы.</span>
-        <span class="pl-price">60&nbsp;000&nbsp;₽</span>
+      <span class="parrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <div class="pstep" data-aos="zoom-in" data-aos-delay="160">
+        <div class="pstep__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <div class="pstep__t">Внедрение</div>
+        <div class="pstep__d">Технология адаптируется, совершенствуется и готовится к применению.</div>
       </div>
-      <div class="pl-row">
-        <span class="pl-idx">10</span>
-        <span class="pl-name">Колорадо-Спрингс</span>
-        <span class="pl-desc">Аренда исторической лаборатории на сутки для съёмок, опытов и очень громких идей.</span>
-        <span class="pl-price">по запросу</span>
+      <span class="parrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <div class="pstep" data-aos="zoom-in" data-aos-delay="240">
+        <div class="pstep__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+        <div class="pstep__t">Массовое применение</div>
+        <div class="pstep__d">Идея становится частью жизни миллионов людей по всему миру.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================ FLAGSHIP (dark) ============================ -->
-<section class="section frame flagship" id="flagship">
-  <svg class="flagship__bolt" viewBox="0 0 1440 600" preserveAspectRatio="none" aria-hidden="true">
-    <defs>
-      <linearGradient id="mflow" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="rgb(160,224,171)"/>
-        <stop offset="0.5" stop-color="rgb(255,172,46)"/>
-        <stop offset="1" stop-color="rgb(165,45,37)"/>
-      </linearGradient>
-    </defs>
-    <path d="M250,-20 L300,140 L240,180 L340,330 L280,360 L400,560"/>
-    <path d="M1180,-20 L1130,120 L1200,170 L1090,300 L1160,340 L1040,600"/>
-  </svg>
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">(03)</span><span class="bar"></span>Флагман сезона</p>
-    <div class="layout">
-      <div class="reveal" data-d="1">
-        <h2>Гроза<span style="display:block">— 2</span></h2>
-      </div>
-      <div class="reveal" data-d="2">
-        <p class="ftext">Два метра меди. Миллион вольт. Один вечер, который зал запомнит навсегда.</p>
-        <p class="fbody">Резонансный трансформатор для сцены. Управляемые разряды до трёх метров, синхронные с партитурой или битом. Привожу, заземляю и дирижирую молнией лично — вам остаётся только погасить свет.</p>
-        <a class="pill pill--solid" href="#contact" style="margin-top:28px"><span>Забронировать «Грозу-2»</span></a>
-      </div>
+<!-- ===================== IMPOSSIBLE ===================== -->
+<section class="section impossible" id="impossible" aria-label="Скептицизм и прогресс">
+  <div class="bigword outline" data-parallax-x="-50">IMPOSSIBLE</div>
+  <canvas class="coil__canvas" id="impCanvas" style="opacity:.6" aria-hidden="true"></canvas>
+  <div class="container imp__inner">
+    <span class="eyebrow">Они говорили: «<span id="typed"></span>»</span>
+    <h2 class="imp__title h-xl metal" data-splitting>То, что люди<br>говорили Тесле</h2>
+    <p class="imp__sub">Каждая великая идея сначала звучит как безумие. Пока кто-то не доказывает обратное.</p>
+
+    <div class="imp__tl">
+      <span class="dot" style="left:8%"></span><span class="dot" style="left:28%"></span>
+      <span class="dot" style="left:50%"></span><span class="dot" style="left:71%"></span><span class="dot" style="left:92%"></span>
+      <div class="imp__node" data-aos="fade-up"><div class="y c-blue">1887</div><div class="q">«Это невозможно»</div><div class="d">Беспроводная передача энергии на расстоянии.</div></div>
+      <div class="imp__node" data-aos="fade-up" data-aos-delay="60"><div class="y c-blue">1891</div><div class="q">«Это невозможно»</div><div class="d">Беспроводной ток высокого напряжения.</div></div>
+      <div class="imp__node" data-aos="fade-up" data-aos-delay="120"><div class="y c-blue">1898</div><div class="q">«Это невозможно»</div><div class="d">Радиоуправление без проводов.</div></div>
+      <div class="imp__node" data-aos="fade-up" data-aos-delay="180"><div class="y c-violet">1905</div><div class="q">«Это невозможно»</div><div class="d">Связь через ионосферу для всего мира.</div></div>
+      <div class="imp__node" data-aos="fade-up" data-aos-delay="240"><div class="y c-violet">2026</div><div class="q">«Это невозможно»</div><div class="d">Искусственный интеллект, понимающий Вселенную.</div></div>
     </div>
 
-    <div class="specs reveal" data-d="1">
-      <div class="spec"><div class="spec__n">1&nbsp;000&nbsp;000&nbsp;В</div><div class="spec__l">пиковое напряжение</div></div>
-      <div class="spec"><div class="spec__n">3&nbsp;м</div><div class="spec__l">длина разряда</div></div>
-      <div class="spec"><div class="spec__n">150&nbsp;кг</div><div class="spec__l">снаряжённая масса</div></div>
-      <div class="spec"><div class="spec__n">12&nbsp;мин</div><div class="spec__l">монтаж и заземление</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ PROCESS ============================ -->
-<section class="section editorial process" id="process">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">(04)</span><span class="bar"></span>Как это работает</p>
-    <h2 class="reveal" data-d="1">От заявки до грома — четыре шага</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="step__n">01</span>
-        <span class="step__t">Заявка</span>
-        <span class="step__d">Опишите площадку, дату и желаемую силу впечатления. Чем громче замысел — тем интереснее.</span>
-      </div>
-      <div class="step reveal" data-d="1">
-        <span class="step__n">02</span>
-        <span class="step__t">Расчёт резонанса</span>
-        <span class="step__d">Подбираю частоту под ваш зал. Молния любит точность не меньше, чем зрелищность.</span>
-      </div>
-      <div class="step reveal" data-d="2">
-        <span class="step__n">03</span>
-        <span class="step__t">Монтаж и заземление</span>
-        <span class="step__d">Привожу оборудование, заземляю и проверяю каждый виток. Безопасность — это тоже часть искусства.</span>
-      </div>
-      <div class="step reveal" data-d="3">
-        <span class="step__n">04</span>
-        <span class="step__t">Гром по команде</span>
-        <span class="step__d">Ваш вечер. Моя молния. Аплодисменты, разумеется, целиком ваши.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ QUOTE (dark) ============================ -->
-<section class="section frame quote" aria-label="Цитата">
-  <div class="wrap reveal">
-    <blockquote>«Если вы хотите понять Вселенную, мыслите категориями энергии, частоты и вибрации.»</blockquote>
-    <cite>Никола Тесла</cite>
-  </div>
-</section>
-
-<!-- ============================ CONTACT (dark) ============================ -->
-<section class="section frame contact" id="contact">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="idx">(05)</span><span class="bar"></span>Контакт</p>
-    <div class="cgrid">
-      <div class="reveal" data-d="1">
-        <h2>Закажите грозу.</h2>
-        <p class="csub">Свяжитесь с лабораторией — и следующий разряд будет вашим. Отвечаю быстрее, чем распространяется звук грома.</p>
-        <div class="cact">
-          <a class="pill pill--solid" href="mailto:lab@tesla.energy"><span>Запросить молнию</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+    <div class="imp__foot">
+      <div class="imp__motto">Скептицизм — это нормально.<br>Важно — не останавливаться.</div>
+      <div class="imp__cta" data-aos="zoom-in">
+        <div>
+          <h3>Хватит говорить.<br>Давайте создавать.</h3>
+          <p>Будущее не приходит само. Мы создаём его здесь и сейчас.</p>
         </div>
-      </div>
-      <div class="cmeta reveal" data-d="2">
-        <div class="row"><div class="k">Почта</div><a class="v" href="mailto:lab@tesla.energy">lab@tesla.energy</a></div>
-        <div class="row"><div class="k">Телефон</div><a class="v" href="tel:+78910001891">+7 891 000-18-91</a></div>
-        <div class="row"><div class="k">Лаборатории</div><div class="v">Нью-Йорк · Белград · Колорадо-Спрингс</div></div>
+        <a class="btn btn--cta" href="#coil">Посмотрим
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===================== COIL ===================== -->
+<section class="section container coil" id="coil" aria-label="Как работает катушка Теслы">
+  <div class="coil__grid">
+    <div class="coil__intro">
+      <a class="link-more" href="#ideas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Назад к каталогу</a>
+      <h2 class="h-md" data-aos="fade-up">Как работает<br>катушка Теслы</h2>
+      <p data-aos="fade-up">Катушка Теслы преобразует электрическую энергию низкого напряжения в энергию
+        высокого напряжения и высокой частоты, создавая впечатляющие электрические разряды
+        и беспроводную передачу энергии.</p>
+      <a class="btn btn--primary" href="#analytics" data-aos="fade-up">Собрать устройство
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="coil__stage" id="coilStage">
+      <canvas class="coil__canvas" id="coilCanvas" aria-hidden="true"></canvas>
+      <div class="part p-toroid" data-explode="-90"></div>
+      <div class="part p-secondary" data-explode="-30"></div>
+      <div class="part p-primary" data-explode="20"></div>
+      <div class="part p-base" data-explode="70"></div>
+
+      <div class="coil__callout c1" data-aos="fade-left"><div class="row"><span class="badge-n">1</span><span class="t">Тороид</span></div><div class="d">Тороидальный накопитель заряда.</div></div>
+      <div class="coil__callout c2" data-aos="fade-left"><div class="row"><span class="badge-n">2</span><span class="t">Вторичная обмотка</span></div><div class="d">Высоковольтная обмотка создаёт высокое напряжение.</div></div>
+      <div class="coil__callout c5" data-aos="fade-left"><div class="row"><span class="badge-n">5</span><span class="t">Искровой промежуток</span></div><div class="d">Создаёт импульс в первичной цепи.</div></div>
+      <div class="coil__callout c3" data-aos="fade-right"><div class="row"><span class="badge-n">3</span><span class="t">Первичная обмотка</span></div><div class="d">Создаёт магнитное поле и индуцирует ток во вторичной обмотке.</div></div>
+      <div class="coil__callout c4" data-aos="fade-right"><div class="row"><span class="badge-n">4</span><span class="t">Конденсатор</span></div><div class="d">Накапливает энергию и обеспечивает короткие импульсы.</div></div>
+      <div class="coil__callout c6" data-aos="fade-right"><div class="row"><span class="badge-n">6</span><span class="t">Основание</span></div><div class="d">Изоляция и поддержка всей конструкции.</div></div>
+    </div>
+
+    <aside class="specs glass" data-aos="fade-left">
+      <h3>Технические характеристики</h3>
+      <div class="spec"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span><div><div class="k">Выходное напряжение</div><div class="v">до <span class="count" data-count="10000000">0</span> В</div></div></div>
+      <div class="spec"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/></svg></span><div><div class="k">Рабочая частота</div><div class="v">100 кГц – 1 МГц</div></div></div>
+      <div class="spec"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-8 4 5 3-9 4 12"/></svg></span><div><div class="k">Мощность</div><div class="v">до 1 МВт</div></div></div>
+      <div class="spec"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M7 7l5-5 5 5M7 17l5 5 5-5"/></svg></span><div><div class="k">Длина искры</div><div class="v">до 10 метров</div></div></div>
+      <div class="spec"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></span><div><div class="k">Режим работы</div><div class="v">Непрерывный / Импульсный</div></div></div>
+      <p class="note">Характеристики могут варьироваться в зависимости от конфигурации устройства.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== INFLUENCE ===================== -->
+<section class="section container influence" id="influence" aria-label="Влияние на человечество">
+  <div class="infl__top">
+    <div class="infl__body">
+      <h2 class="h-lg metal" data-splitting>Влияние на<br>человечество</h2>
+      <div class="sm">Технологии, которые изменили мир</div>
+      <p>Изобретения и разработки Николы Теслы стали фундаментом современной цивилизации.
+        От беспроводной передачи энергии до глобальных коммуникационных систем — его идеи
+        продолжают влиять на жизнь миллиардов людей каждый день.</p>
+      <a class="btn btn--primary" href="#city">Смотреть карту
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div>
+      <div class="infl__bigstats">
+        <div class="bs"><div class="bs__n grad"><span class="count" data-count="98">0</span><small>%</small></div><div class="bs__t">мировых энергосистем</div><div class="bs__d">работают на принципах переменного тока</div></div>
+        <div class="bs"><div class="bs__n grad"><span class="count" data-count="300">0</span><small>+</small></div><div class="bs__t">патентов</div><div class="bs__d">по всему миру на революционные изобретения</div></div>
+        <div class="bs"><div class="bs__n grad"><span class="count" data-count="140">0</span><small>+</small></div><div class="bs__t">лет технологии</div><div class="bs__d">используются человечеством ежедневно</div></div>
+        <div class="bs"><div class="bs__n grad"><span class="count" data-count="8">0</span><small> млрд</small></div><div class="bs__t">людей ежедневно</div><div class="bs__d">используют технологии Теслы</div></div>
+      </div>
+      <div class="infl__map"><canvas id="mapCanvas" aria-hidden="true"></canvas></div>
+    </div>
+  </div>
+
+  <div class="infl__cards">
+    <article class="icard glass" data-aos="fade-up">
+      <div class="icard__h"><span class="icard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span><span class="icard__t">Энергия</span></div>
+      <p class="icard__d">Системы переменного тока обеспечивают генерацию, передачу и распределение электроэнергии по всему миру.</p>
+      <a class="link-more" href="#analytics">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </article>
+    <article class="icard glass" data-aos="fade-up" data-aos-delay="80">
+      <div class="icard__h"><span class="icard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="18" r="2"/><path d="M5 13a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/></svg></span><span class="icard__t">Коммуникации</span></div>
+      <p class="icard__d">Беспроводная связь и передача данных стали основой глобальной связи и обмена информацией.</p>
+      <a class="link-more" href="#analytics">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </article>
+    <article class="icard glass" data-aos="fade-up" data-aos-delay="160">
+      <div class="icard__h"><span class="icard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span class="icard__t">Промышленность</span></div>
+      <p class="icard__d">Электродвигатели и системы автоматизации повысили эффективность производства и изменили индустрию.</p>
+      <a class="link-more" href="#analytics">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </article>
+    <article class="icard glass" data-aos="fade-up" data-aos-delay="240">
+      <div class="icard__h"><span class="icard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 17h14M6 17l1-6h10l1 6M8 11l1-4h6l1 4"/><circle cx="8" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/></svg></span><span class="icard__t">Мобильность</span></div>
+      <p class="icard__d">Электрический транспорт и беспроводная зарядка — шаги к устойчивому будущему на планете.</p>
+      <a class="link-more" href="#lab">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== ANALYTICS ===================== -->
+<section class="section container analytics" id="analytics" aria-label="Tesla Analytics">
+  <div class="an__head">
+    <div>
+      <h2 class="an__title h-xl metal" data-splitting>Tesla Analytics</h2>
+      <div class="an__sub grad">Данные. Идеи. Влияние.</div>
+      <p class="an__lead">История инноваций в цифрах. От первых опытов до технологий, меняющих будущее.</p>
+      <a class="btn btn--primary" href="#city">Полная статистика
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="an__wave"><canvas id="waveCanvas" aria-hidden="true"></canvas></div>
+  </div>
+
+  <div class="an__layout">
+    <div class="an__cards">
+      <article class="acard glass" data-aos="fade-up"><div class="acard__y c-blue">1887</div><div class="acard__t">Переменный ток</div><div class="acard__st">Статус: <b class="c-green">Завершён</b></div><div class="acard__chart" data-chart data-color="#4f8dff" data-seed="1"></div><div class="acard__foot"><div class="acard__pct c-blue"><span class="count" data-count="95">0</span>%</div><div class="acard__lbl">Энергетическая революция</div></div></article>
+      <article class="acard glass" data-aos="fade-up" data-aos-delay="60"><div class="acard__y c-blue">1891</div><div class="acard__t">Беспроводная связь</div><div class="acard__st">Статус: <b class="c-green">Завершён</b></div><div class="acard__chart" data-chart data-color="#4f8dff" data-seed="2"></div><div class="acard__foot"><div class="acard__pct c-blue"><span class="count" data-count="90">0</span>%</div><div class="acard__lbl">Передача сигналов без проводов</div></div></article>
+      <article class="acard glass" data-aos="fade-up" data-aos-delay="120"><div class="acard__y c-blue">1898</div><div class="acard__t">Радиоуправление</div><div class="acard__st">Статус: <b class="c-green">Завершён</b></div><div class="acard__chart" data-chart data-color="#46d6ff" data-seed="3"></div><div class="acard__foot"><div class="acard__pct c-blue"><span class="count" data-count="85">0</span>%</div><div class="acard__lbl">Управление на расстоянии</div></div></article>
+      <article class="acard glass" data-aos="fade-up"><div class="acard__y c-violet">1901</div><div class="acard__t">Глобальная связь</div><div class="acard__st">Статус: <b class="c-amber">Ожидание 100+</b></div><div class="acard__chart" data-chart data-color="#9a7cff" data-seed="4"></div><div class="acard__foot"><div class="acard__pct c-violet"><span class="count" data-count="92">0</span>%</div><div class="acard__lbl">Связь без границ</div></div></article>
+      <article class="acard glass" data-aos="fade-up" data-aos-delay="60"><div class="acard__y c-green">2026</div><div class="acard__t">Искусственный интеллект</div><div class="acard__st">Статус: <b class="c-green">Развитие</b></div><div class="acard__chart" data-chart data-color="#45d6a0" data-seed="5"></div><div class="acard__foot"><div class="acard__pct c-green"><span class="count" data-count="98">0</span>%</div><div class="acard__lbl">Умные системы будущего</div></div></article>
+      <article class="acard glass" data-aos="fade-up" data-aos-delay="120"><div class="acard__y c-gold">2050</div><div class="acard__t">Беспроводная энергия</div><div class="acard__st">Статус: <b class="c-gold">В разработке</b></div><div class="acard__chart" data-chart data-color="#f4c958" data-seed="6"></div><div class="acard__foot"><div class="acard__pct c-gold"><span class="count" data-count="100">0</span>%</div><div class="acard__lbl">Энергия без границ</div></div></article>
+    </div>
+
+    <aside class="kpi glass" data-aos="fade-left">
+      <h3>Ключевые показатели</h3>
+      <div class="kpi__row">
+        <span class="kpi__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8M21 7v5M21 7h-5"/></svg></span>
+        <div><div class="kpi__t">Рост влияния</div><div class="kpi__v grad">+<span class="count" data-count="386">0</span>%</div><div class="kpi__t">за 10 лет</div></div>
+        <div class="kpi__spark" data-spark data-color="#4f8dff" data-seed="7"></div>
+      </div>
+      <div class="kpi__row">
+        <span class="kpi__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 21V5a2 2 0 0 1 2-2h8l5 5v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/></svg></span>
+        <div><div class="kpi__t">Патенты</div><div class="kpi__v"><span class="count" data-count="1245">0</span>+</div><div class="kpi__t">зарегистрировано</div></div>
+        <div class="kpi__spark" data-spark data-color="#9a7cff" data-seed="8" data-type="bar"></div>
+      </div>
+      <div class="kpi__row">
+        <span class="kpi__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+        <div><div class="kpi__t">Энергия</div><div class="kpi__v c-green"><span class="count" data-count="2.4" data-decimals="1">0</span> ТВт·ч</div><div class="kpi__t">передано и сохранено</div></div>
+        <div class="kpi__spark" data-spark data-color="#45d6a0" data-seed="9"></div>
+      </div>
+      <div class="kpi__row">
+        <span class="kpi__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="18" r="2"/><path d="M5 13a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/></svg></span>
+        <div><div class="kpi__t">Связь</div><div class="kpi__v"><span class="count" data-count="7.8" data-decimals="1">0</span> млрд</div><div class="kpi__t">устройств подключено</div></div>
+        <div class="kpi__spark" data-spark data-color="#46d6ff" data-seed="10"></div>
+      </div>
+      <div class="kpi__live"><i></i> Данные обновляются в реальном времени</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== CITY ===================== -->
+<section class="section container city" id="city" aria-label="Разрез современного города">
+  <div class="city__grid">
+    <div class="city__intro">
+      <span class="eyebrow">Технологии</span>
+      <h2 class="h-md" data-aos="fade-up">Разрез<br>современного<br>города</h2>
+      <p data-aos="fade-up">Каждая технология, которой мы пользуемся, — часть единой системы. Всё начинается с одной идеи.</p>
+      <a class="btn btn--primary" href="#lab" data-aos="fade-up">Исследовать
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="city__legend" data-aos="fade-up">
+        <div class="lh">Системы города</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>Энергия</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="18" r="2"/><path d="M5 13a10 10 0 0 1 14 0"/></svg>Связь</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 17h14M6 17l1-7h10l1 7"/><circle cx="8" cy="19" r="1.3"/><circle cx="16" cy="19" r="1.3"/></svg>Транспорт</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg>Данные</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>Инфраструктура</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 4 4 9 0 18M12 3C8 7 8 12 12 21M4 9h16"/></svg>Экология</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>Безопасность</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="city__stage" id="cityStage" data-aos="zoom-in">
+      <svg viewBox="0 0 600 520" id="citySvg">
+        <defs>
+          <linearGradient id="slabTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16223f"/><stop offset="1" stop-color="#0a1126"/></linearGradient>
+          <linearGradient id="slabSide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1530"/><stop offset="1" stop-color="#060a16"/></linearGradient>
+          <linearGradient id="bld" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3a63"/><stop offset="1" stop-color="#0e1733"/></linearGradient>
+        </defs>
+        <g id="citySlabs"></g>
+        <g id="cityBuildings"></g>
+        <g id="cityNodes"></g>
+      </svg>
+    </div>
+
+    <div class="city__callouts">
+      <div class="ccall" data-aos="fade-left"><span class="badge-n">1</span><div><div class="ccall__t">Интернет</div><div class="ccall__d">Высокоскоростная передача данных по оптоволоконным и спутниковым каналам.</div></div></div>
+      <div class="ccall" data-aos="fade-left" data-aos-delay="40"><span class="badge-n">2</span><div><div class="ccall__t">Радио</div><div class="ccall__d">Связь без проводов на всех частотах: от IoT до глобального вещания.</div></div></div>
+      <div class="ccall" data-aos="fade-left" data-aos-delay="80"><span class="badge-n">3</span><div><div class="ccall__t">Переменный ток</div><div class="ccall__d">Передача энергии на дальние расстояния с минимальными потерями.</div></div></div>
+      <div class="ccall" data-aos="fade-left" data-aos-delay="120"><span class="badge-n">4</span><div><div class="ccall__t">Электродвигатели</div><div class="ccall__d">Движущая сила транспорта, промышленности и повседневной жизни.</div></div></div>
+      <div class="ccall" data-aos="fade-left" data-aos-delay="160"><span class="badge-n">5</span><div><div class="ccall__t">Электростанции</div><div class="ccall__d">Генерация чистой энергии из возобновляемых и ядерных источников.</div></div></div>
+      <div class="ccall" data-aos="fade-left" data-aos-delay="200"><span class="badge-n">6</span><div><div class="ccall__t">Электромобили</div><div class="ccall__d">Энергия в движении: эффективно, тихо, экологично.</div></div></div>
+      <div class="ccall" data-aos="fade-left" data-aos-delay="240"><span class="badge-n">7</span><div><div class="ccall__t">Искусственный интеллект</div><div class="ccall__d">Технологии будущего управляют городом уже сегодня.</div></div></div>
+    </div>
+  </div>
+
+  <div class="city__stats">
+    <div data-aos="fade-up"><div class="cstat__n grad"><span class="count" data-count="98">0</span><small>%</small></div><div class="cstat__l">эффективность энергосети</div></div>
+    <div data-aos="fade-up" data-aos-delay="60"><div class="cstat__n grad"><span class="count" data-count="300">0</span><small>+</small></div><div class="cstat__l">датчиков на км²</div></div>
+    <div data-aos="fade-up" data-aos-delay="120"><div class="cstat__n grad"><span class="count" data-count="140">0</span><small>+</small></div><div class="cstat__l">источников чистой энергии</div></div>
+    <div data-aos="fade-up" data-aos-delay="180"><div class="cstat__n grad"><span class="count" data-count="8">0</span><small> млрд</small></div><div class="cstat__l">устройств онлайн</div></div>
+    <div data-aos="fade-up" data-aos-delay="240"><div class="cstat__n grad"><span class="count" data-count="0.02" data-decimals="2">0</span><small> сек</small></div><div class="cstat__l">средняя задержка сети</div></div>
+  </div>
+</section>
+
+<!-- ===================== FUTURE LAB ===================== -->
+<section class="section container lab" id="lab" aria-label="Лаборатория будущего">
+  <span class="eyebrow">Лаборатория</span>
+  <h2 class="lab__head h-lg" data-aos="fade-up">Лаборатория будущего</h2>
+  <p class="lab__lead" data-aos="fade-up">Мы продолжаем путь Теслы, воплощая его идеи в технологиях завтрашнего дня.</p>
+  <div class="lab__grid">
+    <article class="labcard glass" data-aos="fade-up">
+      <div class="labcard__viz"><canvas class="labViz" data-viz="coil" aria-hidden="true"></canvas></div>
+      <div class="labcard__body">
+        <div class="labcard__t">Беспроводная энергетика</div>
+        <p class="labcard__d">Передача энергии без проводов на любые расстояния.</p>
+        <a class="link-more" href="#influence">Узнать больше <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="labcard glass" data-aos="fade-up" data-aos-delay="80">
+      <div class="labcard__viz"><canvas class="labViz" data-viz="globe" aria-hidden="true"></canvas></div>
+      <div class="labcard__body">
+        <div class="labcard__t">Глобальная связь</div>
+        <p class="labcard__d">Связь без границ. Интернет энергии и данных для всех.</p>
+        <a class="link-more" href="#analytics">Узнать больше <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="labcard glass" data-aos="fade-up" data-aos-delay="160">
+      <div class="labcard__viz"><canvas class="labViz" data-viz="city" aria-hidden="true"></canvas></div>
+      <div class="labcard__body">
+        <div class="labcard__t">Устойчивое будущее</div>
+        <p class="labcard__d">Технологии для гармонии человека с природой и вселенной.</p>
+        <a class="link-more" href="#city">Узнать больше <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
 </main>
 
-<!-- ============================ FOOTER ============================ -->
+<!-- ===================== FOOTER ===================== -->
 <footer class="footer">
-  <div class="wrap">
-    <div class="ftop">
+  <div class="container">
+    <div class="footer__top">
       <div class="footer__brand">
-        <div class="logo">тесла<span style="color:var(--pewter)">·</span>лаборатория</div>
-        <p>Лаборатория высокого напряжения Николы Теслы. Электричество как зрелище — с 1891 года, теперь и в 2026-м.</p>
+        <a class="brand" href="#top"><b>TESLA</b><span>FUTURE LAB</span></a>
+        <p>Исследуем невозможное, чтобы создать будущее.</p>
       </div>
       <div class="fcol">
         <h4>Навигация</h4>
-        <a href="#manifesto">Манифест</a>
-        <a href="#catalog">Каталог</a>
-        <a href="#flagship">Шоу</a>
-        <a href="#process">Лаборатория</a>
-        <a href="#contact">Контакт</a>
+        <div class="pair">
+          <div><a href="#ideas">Идеи</a><a href="#coil">Разработки</a><a href="#analytics">Технологии</a></div>
+          <div><a href="#influence">Влияние</a><a href="#lab">Лаборатория</a><a href="#top">О Тесле</a></div>
+        </div>
       </div>
       <div class="fcol">
-        <h4>Услуги</h4>
-        <a href="#catalog">Аренда катушек</a>
-        <a href="#catalog">Беспроводная энергия</a>
-        <a href="#catalog">Молниевые шоу</a>
-        <a href="#catalog">Защита от грозы</a>
+        <h4>Ресурсы</h4>
+        <a href="#">Новости</a><a href="#">Публикации</a><a href="#">Карьера</a>
       </div>
       <div class="fcol">
-        <h4>Связь</h4>
-        <a href="mailto:lab@tesla.energy">lab@tesla.energy</a>
-        <a href="tel:+78910001891">+7 891 000-18-91</a>
-        <span>Телеграм @tesla</span>
-        <span>Колорадо-Спрингс</span>
+        <h4>Правовая информация</h4>
+        <a href="#">Конфиденциальность</a><a href="#">Условия использования</a><a href="#">Контакты</a>
+      </div>
+      <div class="fcol">
+        <h4>Следите за нами</h4>
+        <div class="social">
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L6 22H2.9l7.5-8.6L2 2h6.6l4.5 6.7L18.9 2zm-2.3 18h1.8L7.5 4H5.6l11 16z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 0 0 1.8-1.8C23 15.2 23 12 23 12zM10 15V9l5 3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        </div>
+        <a class="btn btn--primary btn--sm" href="#top">Исследовать будущее
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-    <div class="fbot">
-      <span>© 2026 Никола Тесла. Все молнии защищены.</span>
-      <span>Сделано из меди и высокого напряжения.</span>
-      <a href="#top">Наверх ↑</a>
+    <div class="footer__bottom">
+      <span>© Tesla Future Lab, 2026. Все права защищены.</span>
+      <span>Исследуем невозможное, чтобы создать будущее.</span>
     </div>
   </div>
 </footer>
 
-<!-- ============================ COOKIE ============================ -->
-<aside class="cookie" id="cookie" role="dialog" aria-label="Согласие на использование cookie" aria-live="polite">
-  <p>Мы используем файлы cookie и немного статического электричества, чтобы сайт работал чище. Подробнее — <a href="#">политика конфиденциальности</a>.</p>
-  <div class="crow">
-    <button class="pill pill--util" id="cookieOk">Принять</button>
-    <button class="cx" id="cookieX" aria-label="Закрыть уведомление">Закрыть ✕</button>
-  </div>
-</aside>
-
 <div class="toast" id="toast" role="status"></div>
 
-<script>
-(function(){
-  "use strict";
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- NAV scroll state + active link ---------- */
-  var nav = document.getElementById('nav');
-  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
-  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
-
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav__menu a'));
-  var map = {};
-  links.forEach(function(a){
-    var id = a.getAttribute('href').slice(1);
-    var el = document.getElementById(id);
-    if(el) map[id] = a;
-  });
-  if('IntersectionObserver' in window){
-    var spy = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        var a = map[e.target.id];
-        if(a && e.isIntersecting){
-          links.forEach(function(l){l.classList.remove('active');});
-          a.classList.add('active');
-        }
-      });
-    }, {rootMargin:'-45% 0px -50% 0px'});
-    Object.keys(map).forEach(function(id){ spy.observe(document.getElementById(id)); });
-  }
-
-  /* ---------- Mobile menu ---------- */
-  var burger = document.getElementById('burger');
-  var mm = document.getElementById('mobileMenu');
-  function setMenu(open){
-    mm.classList.toggle('open', open);
-    mm.setAttribute('aria-hidden', open ? 'false' : 'true');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
-  burger.addEventListener('click', function(){ setMenu(!mm.classList.contains('open')); });
-  document.querySelectorAll('[data-mm]').forEach(function(a){
-    a.addEventListener('click', function(){ setMenu(false); });
-  });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') setMenu(false); });
-
-  /* ---------- Reveal on scroll ---------- */
-  var revs = document.querySelectorAll('.reveal');
-  if(reduce || !('IntersectionObserver' in window)){
-    revs.forEach(function(r){ r.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
-    revs.forEach(function(r){ io.observe(r); });
-  }
-
-  /* ---------- Cookie banner ---------- */
-  var cookie = document.getElementById('cookie');
-  var KEY = 'tesla2026_cookie';
-  try{ if(!localStorage.getItem(KEY)){ setTimeout(function(){ cookie.classList.add('show'); }, 1400); } }
-  catch(e){ setTimeout(function(){ cookie.classList.add('show'); }, 1400); }
-  function dismiss(){ cookie.classList.remove('show'); try{ localStorage.setItem(KEY,'1'); }catch(e){} }
-  document.getElementById('cookieOk').addEventListener('click', dismiss);
-  document.getElementById('cookieX').addEventListener('click', dismiss);
-
-  /* ---------- Decorative language toggle ---------- */
-  var toast = document.getElementById('toast'); var tt;
-  document.querySelectorAll('.nav__lang button').forEach(function(b){
-    b.addEventListener('click', function(){
-      if(b.getAttribute('aria-current')==='true') return;
-      toast.textContent = 'Перевод на «'+b.textContent+'» появится скоро. Молния не ждёт перевода.';
-      toast.classList.add('show');
-      clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 2600);
-    });
-  });
-
-  /* ---------- HERO lightning canvas (atmospheric render) ----------
-     Monochrome arcs over black with a faint mercury-flow glow.
-     Subtle by design: no full-screen flashes (photosensitivity-safe). */
-  var canvas = document.getElementById('bolts');
-  var ctx = canvas.getContext('2d');
-  var W=0, H=0, dpr=Math.min(window.devicePixelRatio||1, 2);
-  var bolts=[], embers=[], glowT=0, raf=null, running=false;
-
-  function resize(){
-    var r = canvas.getBoundingClientRect();
-    W=r.width; H=r.height;
-    canvas.width=Math.floor(W*dpr); canvas.height=Math.floor(H*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-
-  function midpoint(p1,p2,disp){
-    var mx=(p1.x+p2.x)/2 + (Math.random()-0.5)*disp;
-    var my=(p1.y+p2.y)/2 + (Math.random()-0.5)*disp;
-    return {x:mx,y:my};
-  }
-  function buildPath(p1,p2,detail,disp){
-    var pts=[p1,p2];
-    for(var d=0; d<detail; d++){
-      var np=[];
-      for(var i=0;i<pts.length-1;i++){
-        np.push(pts[i]);
-        np.push(midpoint(pts[i],pts[i+1],disp));
-      }
-      np.push(pts[pts.length-1]);
-      pts=np; disp*=0.55;
-    }
-    return pts;
-  }
-  function spawnBolt(){
-    var startX = W*(0.15+Math.random()*0.7);
-    var p1={x:startX, y:-20};
-    var p2={x:startX+(Math.random()-0.5)*W*0.4, y:H*(0.55+Math.random()*0.5)};
-    bolts.push({pts:buildPath(p1,p2,6,W*0.16), life:1, branches:Math.random()<0.6});
-    if(bolts.length>4) bolts.shift();
-  }
-  function drawBolt(b){
-    var a=b.life;
-    ctx.save();
-    // faint warm core glow (mercury flow) — imagery only
-    ctx.strokeStyle='rgba(255,210,150,'+(0.10*a)+')';
-    ctx.lineWidth=6; ctx.lineJoin='round'; ctx.lineCap='round';
-    stroke(b.pts);
-    // white core
-    ctx.strokeStyle='rgba(255,255,255,'+(0.55*a)+')';
-    ctx.lineWidth=1.4;
-    stroke(b.pts);
-    ctx.restore();
-  }
-  function stroke(pts){
-    ctx.beginPath(); ctx.moveTo(pts[0].x,pts[0].y);
-    for(var i=1;i<pts.length;i++) ctx.lineTo(pts[i].x,pts[i].y);
-    ctx.stroke();
-  }
-  function drawGlow(){
-    glowT+=0.005;
-    var cx=W*0.5 + Math.sin(glowT)*W*0.12;
-    var cy=H*0.42 + Math.cos(glowT*0.8)*H*0.08;
-    var g=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.max(W,H)*0.55);
-    g.addColorStop(0,'rgba(120,90,40,0.16)');
-    g.addColorStop(0.5,'rgba(40,60,45,0.06)');
-    g.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
-  }
-  function drawEmbers(){
-    if(embers.length<26 && Math.random()<0.4)
-      embers.push({x:Math.random()*W, y:H+10, v:0.3+Math.random()*0.9, s:Math.random()*1.4+0.4, a:Math.random()*0.4+0.1});
-    for(var i=embers.length-1;i>=0;i--){
-      var e=embers[i]; e.y-=e.v; e.x+=Math.sin(e.y*0.01)*0.3;
-      ctx.fillStyle='rgba(255,190,120,'+e.a+')';
-      ctx.fillRect(e.x,e.y,e.s,e.s);
-      if(e.y< -10) embers.splice(i,1);
-    }
-  }
-  var nextBolt=0;
-  function frame(t){
-    ctx.clearRect(0,0,W,H);
-    drawGlow();
-    drawEmbers();
-    if(t>nextBolt){ spawnBolt(); nextBolt=t+1600+Math.random()*2200; }
-    for(var i=bolts.length-1;i>=0;i--){
-      drawBolt(bolts[i]); bolts[i].life-=0.045;
-      if(bolts[i].life<=0) bolts.splice(i,1);
-    }
-    raf=requestAnimationFrame(frame);
-  }
-  function start(){ if(running) return; running=true; nextBolt=0; raf=requestAnimationFrame(frame); }
-  function stop(){ running=false; if(raf) cancelAnimationFrame(raf); }
-
-  function staticScene(){ // reduced-motion fallback
-    resize(); ctx.clearRect(0,0,W,H); drawGlow();
-    spawnBolt(); if(bolts[0]){ bolts[0].life=0.8; drawBolt(bolts[0]); }
-  }
-
-  if(canvas){
-    resize();
-    window.addEventListener('resize', function(){ resize(); if(reduce) staticScene(); });
-    if(reduce){ staticScene(); }
-    else {
-      start();
-      // pause when hero scrolled out of view (perf)
-      var hero=document.querySelector('.hero');
-      if('IntersectionObserver' in window){
-        new IntersectionObserver(function(es){
-          es.forEach(function(e){ e.isIntersecting ? start() : stop(); });
-        },{threshold:0.02}).observe(hero);
-      }
-      document.addEventListener('visibilitychange', function(){
-        document.hidden ? stop() : start();
-      });
-    }
-  }
-})();
-</script>
+<!-- ===================== LIBRARIES (vendored locally — no CDN dependency) ===================== -->
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/js/vendor/lenis.min.js"></script>
+<script src="assets/js/vendor/tsparticles.bundle.min.js"></script>
+<script src="assets/js/vendor/anime.min.js"></script>
+<script src="assets/js/vendor/countUp.umd.js"></script>
+<script src="assets/js/vendor/typed.umd.js"></script>
+<script src="assets/js/vendor/apexcharts.min.js"></script>
+<script src="assets/js/vendor/aos.js"></script>
+<script src="assets/js/vendor/splitting.min.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
