@@ -79,9 +79,9 @@
     <div class="hero__visual" data-parallax-wrap>
       <div class="portrait">
         <img class="portrait__img" data-parallax="20"
-          src="https://upload.wikimedia.org/wikipedia/commons/d/d4/N.Tesla.JPG"
+          src="assets/img/portrait.jpg"
           alt="Портрет Николы Теслы"
-          onerror="this.style.display='none';this.closest('.portrait').querySelector('.portrait__fallback').style.display='grid';" />
+          onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://upload.wikimedia.org/wikipedia/commons/d/d4/N.Tesla.JPG';}else{this.style.display='none';this.closest('.portrait').querySelector('.portrait__fallback').style.display='grid';}" />
         <div class="portrait__fallback metal" style="font-family:var(--f-display);font-weight:800;font-size:120px;letter-spacing:.05em;">NT</div>
       </div>
       <svg class="coil-hero" data-parallax="-30" viewBox="0 0 200 320" aria-hidden="true">

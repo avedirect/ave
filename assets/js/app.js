@@ -366,6 +366,33 @@ document.querySelectorAll('.labViz').forEach(function(c){
   } }); }, {threshold:0.2}).observe(svg);
 })();
 
+/* =================================================================
+   PHOTO LAYERS — drop the 9 sliced images into assets/img/ and they
+   appear automatically. If a file is missing, nothing changes.
+   Filenames map to the 3x3 reference grid (left→right, top→bottom).
+   ================================================================= */
+var PHOTOS=[
+  { sel:'.hero',                img:'hero.jpg',       cls:'sbg sbg--side' },   /* #1 coil + lightning */
+  { sel:'#influence .infl__map',img:'map.jpg',        cls:'sbg sbg--fit' },    /* #2 world map */
+  { sel:'#city .city__stage',   img:'city.jpg',       cls:'sbg sbg--fit' },    /* #4 iso city */
+  { sel:'#analytics .an__wave', img:'analytics.jpg',  cls:'sbg sbg--fit' },    /* #5 HUD dashboard */
+  { sel:'#coil .coil__stage',   img:'coil.jpg',       cls:'sbg sbg--fit' },    /* #6 exploded coil */
+  { sel:'#impossible',          img:'impossible.jpg', cls:'sbg sbg--cover' },  /* #7 silhouette */
+  { sel:'#lab',                 img:'lab.jpg',        cls:'sbg sbg--cover sbg--faint' } /* #8 future lab */
+];
+PHOTOS.forEach(function(p){
+  var el=document.querySelector(p.sel); if(!el) return;
+  var url='assets/img/'+p.img, im=new Image();
+  im.onload=function(){
+    var d=document.createElement('div'); d.className=p.cls;
+    d.style.backgroundImage='url("'+url+'")';
+    el.insertBefore(d, el.firstChild);
+    el.classList.add('has-photo');
+    if(has('ScrollTrigger')) ScrollTrigger.refresh();
+  };
+  im.src=url;
+});
+
 /* refresh ScrollTrigger after load (fonts/charts shift layout) */
 window.addEventListener('load', function(){ if(has('ScrollTrigger')) setTimeout(function(){ScrollTrigger.refresh();},300); });
 })();

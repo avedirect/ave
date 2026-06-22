@@ -529,3 +529,31 @@ h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:1.02;letter-sp
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
   .cursor{display:none;}
 }
+
+/* =================================================================
+   PHOTO LAYERS — injected by JS only when an image actually loads,
+   so the site looks identical until photos are dropped into assets/img/
+   ================================================================= */
+.sbg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;
+  background-repeat:no-repeat;pointer-events:none;}
+.sbg::after{content:"";position:absolute;inset:0;}
+/* full-section backdrop (hero/impossible/lab) */
+.sbg--cover::after{background:linear-gradient(180deg,rgba(5,7,14,.74),rgba(5,7,14,.84));}
+.sbg--faint{opacity:.45;}
+/* hero: photo weighted right, fades into bg on the left so text stays clean */
+.sbg--side{background-position:right center;opacity:.6;}
+.sbg--side::after{background:linear-gradient(90deg,var(--bg) 16%,rgba(5,7,14,.55) 52%,rgba(5,7,14,.15) 100%);}
+/* boxed visuals (map / wave / coil stage / city stage) */
+.sbg--fit{border-radius:14px;}
+.sbg--fit::after{background:linear-gradient(180deg,rgba(5,7,14,.32),rgba(5,7,14,.58));}
+
+/* lift content above the injected photo layer */
+.has-photo > .container,
+.hero.has-photo .hero__grid, .hero.has-photo .statstrip{position:relative;z-index:2;}
+.impossible.has-photo .coil__canvas{z-index:1;}
+.infl__map.has-photo canvas, .an__wave.has-photo canvas,
+.coil__stage.has-photo .coil__canvas{position:absolute;z-index:1;}
+.infl__map.has-photo, .an__wave.has-photo, .coil__stage.has-photo, .city__stage.has-photo{overflow:hidden;border-radius:14px;}
+/* when a real exploded-coil / city photo is present, retire the CSS/SVG stand-ins */
+.coil__stage.has-photo .part{opacity:0;pointer-events:none;}
+.city__stage.has-photo #citySvg{opacity:0;}
