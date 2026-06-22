@@ -1,0 +1,7 @@
+# Python bytecode caches (generated when running skill scripts)
+__pycache__/
+*.py[cod]
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
