@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [claude/hyliox-portfolio-landing-dfvcun]
+    paths-ignore: ['**.md']
   workflow_dispatch:
 
 permissions:

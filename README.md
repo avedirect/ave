@@ -11,6 +11,25 @@ npm run build      # typecheck + production build
 npm run preview
 ```
 
+## Deployment
+
+`.github/workflows/deploy-pages.yml` builds on every push to this branch and
+publishes `dist` to GitHub Pages at **https://avedirect.github.io/ave/**.
+
+Pages serves the repo under `/ave/` rather than a domain root, so the workflow
+passes that prefix to the build as `BASE_PATH`; `vite.config.ts` normalises the
+trailing slash. Local dev and any root-served host (Vercel, Netlify) need no
+override.
+
+One-time repository setup, which no workflow token can do for you — creating a
+Pages site needs repo-admin rights that `GITHUB_TOKEN` does not have:
+
+1. **Settings → Pages → Source: GitHub Actions.**
+2. If the deploy job then fails with *"Branch is not allowed to deploy to
+   github-pages due to environment protection rules"*, add this branch under
+   **Settings → Environments → github-pages → Deployment branches**. It bites
+   because the repository's default branch is not this one.
+
 ## Design system
 
 Defined once in `tailwind.config.js` and consumed by name everywhere else.
