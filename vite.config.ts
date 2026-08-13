@@ -1,7 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// GitHub Pages serves this repo under /ave/, not the domain root. The CI
+// workflow passes that prefix in as BASE_PATH; local dev and any host that
+// serves from the root need no override.
+const rawBase = process.env.BASE_PATH ?? '/'
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`
+
 export default defineConfig({
+  base,
   plugins: [react()],
   build: {
     target: 'es2020',
