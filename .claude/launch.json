@@ -1,0 +1,9 @@
+{
+  "configurations": [
+    {
+      "name": "Сайт курса «Связка» (локальный просмотр)",
+      "command": "python3 -m http.server 8766 --directory kurs-svyazka/site/public",
+      "url": "http://localhost:8766/"
+    }
+  ]
+}

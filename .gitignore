@@ -1,0 +1,4 @@
+# собранный сайт — создаётся командой python build.py
+kurs-svyazka/site/public/
+__pycache__/
+*.pyc
