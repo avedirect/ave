@@ -1,0 +1,87 @@
+<section class="page-hero on-dark">
+  <div class="wrap">
+    <nav aria-label="Хлебные крошки"><ol class="crumbs"><!--CRUMBS--></ol></nav>
+    <h1>Контакты</h1>
+    <p class="lead">Напишите в Telegram или оставьте телефон — расскажу про формат, тарифы и ближайший поток. Если пришлёте ссылку на сайт, посмотрю его до разговора и скажу, что чинить первым.</p>
+    <div class="facts-inline">
+      <span>Отвечаю <b>{{hours}}</b></span>
+      <span>Старт потока <b>{{start}}</b></span>
+      <span><b>{{seats}} мест</b> в группе</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-tile reveal">
+        <span class="icon-box y">{{icon-tg}}</span>
+        <b>Telegram</b>
+        <a href="{{telegram}}" target="_blank" rel="noopener">{{telegram_name}}</a>
+        <span>Самый быстрый способ. Можно сразу прислать ссылку на сайт и скриншот кабинета.</span>
+      </div>
+      <div class="contact-tile reveal">
+        <span class="icon-box y">{{icon-phone}}</span>
+        <b>Телефон</b>
+        <a href="tel:{{phone_raw}}">{{phone}}</a>
+        <span>Звоните {{hours}}. Если не отвечаю — я на созвоне, перезвоню.</span>
+      </div>
+      <div class="contact-tile reveal">
+        <span class="icon-box y">{{icon-mail}}</span>
+        <b>E-mail</b>
+        <a href="mailto:{{email}}">{{email}}</a>
+        <span>Для подробных вопросов, договора и закрывающих документов.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap two-col">
+    <div class="card-plain reveal">
+      <h2>Оставьте заявку</h2>
+      <p class="lead">Заполните форму — свяжусь в рабочее время. Обязательных полей всего два.</p>
+      <form class="form" data-form="contact" novalidate><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+        <div class="form-row">
+          <div class="field">{{icon-user}}<input type="text" name="name" placeholder="Ваше имя" autocomplete="name" aria-label="Ваше имя"></div>
+          <div class="field">{{icon-phone}}<input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" aria-label="Телефон"></div>
+        </div>
+        <label class="field-label" for="contactTopic">О чём вопрос:</label>
+        <div class="field field-select">{{icon-list}}<select name="service" id="contactTopic">
+          <option>Участие в ближайшем потоке</option>
+          <option>Тарифы и оплата</option>
+          <option>Разбор моей текущей рекламы</option>
+          <option>Сайт под Яндекс Директ</option>
+          <option>Другое</option>
+        </select></div>
+        <div class="messengers"><span>Куда ответить:</span>
+          <label><input type="radio" name="messenger" value="Telegram" checked><span>Telegram</span></label>
+          <label><input type="radio" name="messenger" value="MAX"><span>MAX</span></label>
+          <label><input type="radio" name="messenger" value="Звонок"><span>Звонок</span></label>
+        </div>
+        <div class="consents">
+          <label class="consent"><input type="checkbox" name="consent"> <span>Я даю согласие на <a href="/soglasie/" target="_blank">обработку персональных данных</a> на условиях <a href="/politika/" target="_blank">политики конфиденциальности</a></span></label>
+          <label class="consent"><input type="checkbox" name="ads"> <span>Я согласен получать сообщения о старте потоков и материалы по рекламе</span></label>
+        </div>
+        <button class="btn btn-block" type="submit">Отправить заявку {{icon-arrow-btn}}</button>
+        <p class="form-note">{{icon-lock}}Без обязательств. Данные не передаются третьим лицам</p>
+      </form>
+    </div>
+    <div class="reveal">
+      <!--CTA:book-->
+      <!--CTA:programma-->
+      <div class="card-plain" style="margin-top:16px">
+        <h3>Реквизиты</h3>
+        <ul class="list-check">
+          <li>{{author_ip}}</li>
+          <li>ИНН {{inn}}</li>
+          <li>ОГРНИП {{ogrnip}}</li>
+          <li>{{city}} · работаем онлайн по всей России</li>
+        </ul>
+        <p class="note" style="margin-top:16px">{{icon-doc}}Договор и закрывающие документы — по запросу на {{email}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--FAQ-->
